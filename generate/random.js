@@ -1,21 +1,23 @@
-function generate () {
+function generate (length_word) {
+  
   var vowels = ['e','y','u','i','o','a'];
-  var consonants = ['q','w','r','t','p','s','d'];
-  i = 0;
-  length_word = 6;// длина пароля
-  k = randomInteger(0,1);// первая буква
+  var consonants = ['q','w','r','t','p','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
+  count = 0;
+  first_letter = randomInteger(0,1);
   result = '';
-  while (i < length_word)
+
+  while (count < length_word)
   {
-    if (k === 0){
+    if (first_letter === 0){
       result = result + consonants[randomInteger(0,consonants.length - 1)];
-      k = 1;}
+      first_letter = 1;}
     else {
       result = result + vowels[randomInteger(0,vowels.length - 1)];
-      k = 0;
+      first_letter = 0;
     }
-    i++;
+    count++;
   }
+
   document.getElementById('random').innerHTML = result;
 }
 
