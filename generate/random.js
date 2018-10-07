@@ -1,5 +1,7 @@
 "use strict";
 
+var withNumbers = true;
+
 function generate (wordLength) {
 
   var vowels = ['e','y','u','i','o','a'];
@@ -8,6 +10,7 @@ function generate (wordLength) {
   var letter = randomInteger(0,1); //0 - первая буква согласная, 1 - гласная, в дальнейшем используется для чередования
   var result = '';
 
+  if (withNumbers) {wordLength = wordLength - 2}
   while (count < wordLength)
   {
     if (letter === 0){
@@ -20,6 +23,10 @@ function generate (wordLength) {
     count++;
   }
 
+  if (withNumbers){
+    result += randomInteger(10, 99); 
+  }
+
   document.getElementById("random").innerHTML = result;
 }
 
@@ -27,4 +34,9 @@ function randomInteger(min, max) {
   var rand = min + Math.random() * (max + 1 - min);
   rand = Math.floor(rand);
   return rand;
+}
+
+  function generateWithNumbers(){
+  withNumbers = !withNumbers;
+  
 }
