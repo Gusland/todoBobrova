@@ -50,7 +50,7 @@
     }
 
     function validateLength(length){
-        if ( length > 3 || length < 50){
+        if ( length > 3 && length < 50){
           return length;
         }
         else return 6;
