@@ -3,15 +3,21 @@
  <head>
    <meta charset = "utf-8">
    <title>Password generator</title>
-   <script src="random.js"></script>
+   <script src="PasswordGenerator.js"></script>
+   <script> 
+    function gen(){
+      result = generatePassword(6,2);
+      document.getElementById("random").innerHTML = result;
+    }
+  </script>
  </head>
 
 <body>
 
 <div style="text-align: center;">
   <label id="random" style="margin: 30px; font-size: 25px; display: block;">Password</label>
-  <input type="submit" value="Generate" onclick="generate(6);" style="width: 100px; height: 30px;">
-  <label style="display: block; padding: 10px;"><input onclick="generateWithNumbers();" checked type="checkbox">Использовать цифры</label>
+  <input type="submit" value="Generate" onclick="gen();" style="width: 100px; height: 30px;">
+  
 </div>
 
 </body>
