@@ -7,8 +7,10 @@
  </head>
 
 <body>
-<p> Привет! </p>
-<input type="submit" value="типографировать" onclick="getTypografText();">
+<div> 
+<label id="t" style="margin: 30px; font-size: 25px; display: block;">Text</label>
+<textarea cols="100" rows="18" id="jstypo_text" name = "jstypo_text"></textarea>
+<input type="button" value="Типографировать" onclick="getTypografText()" id ="typograf">
 <script src="typograf.js"></script>
 </body>
 </html>
