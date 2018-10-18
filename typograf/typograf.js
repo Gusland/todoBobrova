@@ -1,20 +1,20 @@
 function getTypografText(){
   var request = new XMLHttpRequest();
-  var text = 'привет, мы работаем';
-  request.open('POST', '/api.v1.php HTTP/1.0', true);
-  
-  request.setRequestHeader("Content-type", "multipart/form-data");
+  var str = 'привет, мы работаем';
+  var text = encodeURIComponent(str);
+  request.open('GET', 'http://mdash.ru/api.v1.php?text', true);
 
-request.onreadystatechange = function() {//Вызывает функцию при смене состояния.
-    if(request.readyState == XMLHttpRequest.DONE && request.status == 200) {
-        alert('done');
+  request.onload = function () {
+    var data = JSON.parse(this.response);
+    if (request.status >= 200 && request.status < 400) {
+     alert(data);
+    } else {
+     alert('статус' + request.status);
     }
-    else {
-      alert ('статус' + request.status);
-    }
-}
-request.send();
-}
+  }
 
+request.send(null);
+
+}
 
 
