@@ -4,16 +4,10 @@ function getTypografText(){
   var text = encodeURIComponent(str);
   request.open('GET', 'http://mdash.ru/api.v1.php?text', true);
 
-  request.onload = function () {
-    var data = JSON.parse(this.response);
-    if (request.status >= 200 && request.status < 400) {
-     alert(data);
-    } else {
-     alert('статус' + request.status);
-    }
-  }
+  var data = JSON.parse(this.response);
+  alert(data);
 
-request.send(null);
+  request.send(null);
 
 }
 
