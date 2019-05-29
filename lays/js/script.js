@@ -2,29 +2,11 @@
   var elemNav = document.getElementsByClassName('navigation');
   var flag = false;
   var linkElement = document.getElementsByClassName('menu__link');
-
-  window.addEventListener('resize', nav);
-  window.addEventListener('load', nav);
   
   window.addEventListener('resize', createProportionalBlock);
   window.addEventListener('load', createProportionalBlock);
 
   window.addEventListener('scroll', scrollNav);
-
-  function nav() {
-      if (window.innerWidth <= 680) {
-          (document.getElementsByClassName('menu__link'))[3].addEventListener('click', navigation);
-          for (var i = 0; i < elements.length; i++) {
-              elements[i].addEventListener('click', navigation);
-          }
-      }
-      else {
-        for (var i = 0; i < linkElement.length; i++) {
-          linkElement[i].classList.remove("open-menu");
-          linkElement[i].classList.remove("close-menu");
-        }
-      }
-  }
 
 function navigation() {         
       for (var i = 0; i < elemNav.length; i++) {
@@ -55,11 +37,16 @@ function createProportionalBlock(){
         head[0].style.height = parseInt(1.73 *headwidth) + "px";
         head[0].classList.remove("site-header_animate");
         gallery[0].classList.remove("gallery-block_animate");
+        (document.getElementsByClassName('menu__link'))[3].addEventListener('click', navigation);
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('click', navigation);
+        }
     }
     else {
         head[0].style.height = parseInt(0.464 *headwidth) + "px";
-        for (var j = 0; j < linkElement.length; j++) {
-            linkElement[j].classList.remove("close");
+        for (var i = 0; i < linkElement.length; i++) {
+            linkElement[i].classList.remove("open-menu");
+            linkElement[i].classList.remove("close-menu");
         }
     }
 
@@ -72,7 +59,6 @@ function createProportionalBlock(){
         else {
             element[i].style.height = parseInt(0.51 *elwidth) + "px";
         }
-        
     }
 }
 
@@ -100,35 +86,22 @@ window.addEventListener("scroll", scrollDesc, false);
 
 function scrollDesc() {
   if (window.innerWidth > 680) {
-    var el_desc = document.getElementsByClassName("description-block");
-    var el_im = document.getElementsByClassName("image-block");
-    for (var i = 0; i < el_desc.length; i++) {
-        if (isVisible(el_desc[i])) {
-            el_desc[i].classList.add("active");
-            el_im[i].classList.add("active");
+    var elementDesc = document.getElementsByClassName("description-block");
+    var elementImage = document.getElementsByClassName("image-block");
+    for (var i = 0; i < elementDesc.length; i++) {
+        if (isVisible(elementDesc[i])) {
+            elementDesc[i].classList.add("active");
+            elementImage[i].classList.add("active");
         }
     }
   }
 }
 
-// function isPartiallyVisible(el) {
-//     var elementBoundary = el.getBoundingClientRect();
-
-//     var top = elementBoundary.top;
-//     var bottom = elementBoundary.bottom;
-//     var height = elementBoundary.height;
-
-//     return ((top + height >= 0) && (height + window.innerHeight >= bottom + 40));
-// }
-
 function isVisible(elem) {
-
       var coords = elem.getBoundingClientRect();
 
       var windowHeight = document.documentElement.clientHeight;
-
-      // верхняя граница elem в пределах видимости ИЛИ нижняя граница видима
-      var topVisible = coords.top > 0 && coords.top < windowHeight;
+      var topVisible = coords.top > 0 && coords.top + 50 < windowHeight;
       var bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
 
       return topVisible || bottomVisible;
