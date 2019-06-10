@@ -352,7 +352,7 @@ html {
   text-align: center;
   font-size: .56rem;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: .02rem;
   line-height: 1.5rem;
   cursor: pointer;
   border: 2px solid white;
@@ -419,11 +419,13 @@ html {
   font-size: 14px;
   height: 123px;
   cursor: pointer;
+  position: relative;
 }
 
 .menu__link::before {
   content: "";
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
   height: 123px;
@@ -493,6 +495,7 @@ html {
   width: 100%;
   background: #f73934;
   opacity: 1;
+  top: 0;
   left: 0;
   -webkit-transition: .2s ease-in-out;
   -moz-transition: .2s ease-in-out;
@@ -574,6 +577,7 @@ html {
     margin: 0;
     font-size: 18px;
     width: 120px;
+    top: 0;
     left: 50%;
     margin-left: -60px;
   }
@@ -699,7 +703,7 @@ html {
     width: 13.2rem;
     height: 3.5rem;
     font-size: 1.4rem;
-    letter-spacing: 1.5px;
+    letter-spacing: .15rem;
     line-height: 3.9rem;
     border: 2px solid white;
   }
@@ -823,7 +827,7 @@ html {
   font-size: 2.17rem;
   color: #f73934;
   font-family: GothamPro-Medium;
-  line-height: 1;
+  line-height: 2.1rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
 }
@@ -890,7 +894,6 @@ html {
   .site-header_icon-item {
     width: 13rem;
     height: 100%;
-    line-height: 14px;
     color: #494949;
     text-align: center;
     margin-left: -1rem;
@@ -907,6 +910,7 @@ html {
   .site-header_icon-item p {
     font-size: 13px;
     margin-top: 8px;
+    line-height: 14px;
   }
 
   .site-header_icon {
@@ -927,7 +931,7 @@ html {
     margin-left: -60px;
     font-size: 43px;
     color: #d62b2b;
-    line-height: 1;
+    line-height: 43px;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
@@ -969,7 +973,6 @@ html {
 .gallery-block__text-block {
   position: relative;
   margin: 6.1rem 0 0 2rem;
-  letter-spacing: .9;
 }
 
 .gallery-block__text-block h2 {
