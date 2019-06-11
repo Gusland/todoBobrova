@@ -825,7 +825,7 @@ html {
   font-size: 2.17rem;
   color: #f73934;
   font-family: GothamPro-Medium;
-  line-height: 2.1rem;
+  line-height: 1.3rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
 }
@@ -833,7 +833,7 @@ html {
 .middle {
   font-size: 1.2rem;
   font-family: GothamPro-Light;
-  line-height: 1rem;
+  /*line-height: 1rem;*/
 }
 
 .last {
@@ -841,9 +841,9 @@ html {
   font-family: GothamPro-Light;
 }
 
-.site-header__text-block span {
+.last span {
   font-size: 2rem;
-  line-height: 1.7rem;
+  /*line-height: 1.7rem;*/
   font-family: GothamPro-Black;
   text-transform: capitalize; 
   letter-spacing: 0;
@@ -927,29 +927,34 @@ html {
     left: 50%;
     margin: 0;
     margin-left: -60px;
-    font-size: 43px;
     color: #d62b2b;
-    line-height: 43px;
+    font-size: 43px;
+    line-height: 27px;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
-
-  .middle {
-    font-size: 25px;
-    line-height: 25px;
-    letter-spacing: 1px;
-  }
-
-  .last {
-    font-size: 25px;
-    line-height: 25px;
-    letter-spacing: 1px;
-  }
-
+  
   .site-header__text-block span {
     line-height: 25px;
-    font-size: 40px; 
+    font-size: 43px; 
   }
+
+  span.middle {
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+
+  span.last {
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+
+  .last span {
+    font-size: 40px;
+  }
+
 }
 
 /*2 блок*/
@@ -973,7 +978,7 @@ html {
   margin: 6.1rem 0 0 2rem;
 }
 
-.gallery-block__text-block h2 {
+.gallery-block__text-block span {
   font-size: 1rem;
   line-height: 1.35rem;
   font-family: GothamPro-Bold;
@@ -981,7 +986,7 @@ html {
   padding-right: .2rem;
 }
 
-.gallery-block__text-block h2.hach {
+ span.hach {
   display: inline-block;
   font-size: .98rem;
   line-height: 1.35rem;
@@ -1068,7 +1073,7 @@ html {
   height: 6.65rem;
 }
 
-.about-block__text-block h2 {
+.about-block__text-block span {
   font-family: GothamPro-Bold;
   font-size: 1.35rem;
   line-height: 1.45rem;
@@ -1166,14 +1171,14 @@ h2.mobile,
   margin: 10.45rem 0 0 3.1rem;
 }
 
-.lays-block__text-block h2 {
-  margin-bottom: 0.77rem;
+.lays-block__text-block span {
   font-family: GothamPro-Bold;
   color: rgb(48, 31, 32);
   font-size: 1.5rem;
 }
 
 .lays-block__button {
+  margin-top: 0.77rem;
   margin-left: 1.95rem;
 }
 
@@ -1471,7 +1476,7 @@ h2.mobile,
     margin: 18.3rem 0 0 4rem;
   }
 
-  .gallery-block__text-block h2 {
+  .gallery-block__text-block span {
     font-size: 2.5rem;
     line-height: 3.5rem;
     font-family: GothamPro-Bold;
@@ -1479,7 +1484,7 @@ h2.mobile,
     padding-right: .2rem;
   }
 
-  .gallery-block__text-block h2.hach {
+   span.hach {
     font-size: 2.5rem;
     line-height: 2.9rem;
   }
@@ -1504,7 +1509,7 @@ h2.mobile,
 @media screen and (max-width: 680px) {
 
   .about-block__text-block {
-    margin: 5.3rem 0 0 4rem;
+    margin: 3rem 0 0 4rem;
   }
 
   .about-block__button {
@@ -1514,16 +1519,16 @@ h2.mobile,
     margin: 0 0 0 -6.5rem;
   }
 
-  .about-block__text-block:after, .about-block__text-block h2, .about-block__text-block p {
+  .about-block__text-block:after, .about-block__text-block span, .about-block__text-block p {
     display: none;
   }
 
-  h2.mobile,
+  span.mobile,
   p.mobile {
     display: block;
   }
 
-  .about-block__text-block h2.mobile {
+  .about-block__text-block span.mobile {
     font-size: 3.6rem;
     line-height: 3.7rem;
     margin: 0;
@@ -1545,13 +1550,14 @@ h2.mobile,
     margin: 0 0 0 -11.6rem;
   }
 
-  .lays-block__text-block h2 {
-    margin-bottom: 1.6rem;
+  .lays-block__text-block span {
+    /*margin-bottom: 4.6rem;*/
     font-size: 3.8rem;
   }
 
   .lays-block__button {
     margin-left: 5.25rem;
+    margin-top: 1.6rem;
   }
 
   .lays-block__description-block:after {
