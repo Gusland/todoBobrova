@@ -1,0 +1,472 @@
+@import url("source/aside.css");
+@import url("source/header.css");
+@import url("source/gallery-block.css");
+@import url("source/about-block.css");
+@import url("source/lays-block.css");
+@import url("source/footer.css");
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+@font-face {
+  font-family: GothamPro;
+  src: url(fonts/GothaProReg.ff3448e4.eot);
+  src: local('☺'),url(../fonts/GothaProReg.7b9a959a.woff) format('woff'),url(fonts/GothaProReg.95177029.ttf) format('truetype'),url(fonts/GothaProReg.d0b64f1e.svg) format('svg');
+}
+
+@font-face {
+  font-family: GothamPro-Medium;
+  src: url(fonts/GothaProMed.883ba12c.eot);
+  src: local('☺'),url(../fonts/GothaProMed.b8640793.woff) format('woff'),url(fonts/GothaProMed.a864a705.ttf) format('truetype'),url(fonts/GothaProMed.2fae195a.svg) format('svg');
+}
+
+@font-face {
+  font-family: GothamPro-Light;
+  src: url(fonts/GothaProLig.37ce404d.eot);
+  src: local('☺'),url(../fonts/GothaProLig.717add55.woff) format('woff'),url(fonts/GothaProLig.401cd35e.ttf) format('truetype'),url(fonts/GothaProLig.49317c61.svg) format('svg');
+}
+
+@font-face {
+  font-family: GothamPro-Black;
+  src: url(fonts/GothaProBla.9e5bf59c.eot);
+  src: local('☺'),url(../fonts/GothaProBla.a8a6cdf1.woff) format('woff'),url(fonts/GothaProBla.7ede1962.ttf) format('truetype'),url(fonts/GothaProBla.92abded7.svg) format('svg');
+}
+
+@font-face {
+  font-family: GothamPro-Bold;
+  src: url(fonts/GothaProBol.6f19dba3.eot);
+  src: local('☺'),url(../fonts/GothaProBol.1ffe6b86.woff) format('woff'),url(fonts/GothaProBol.9bfe30b8.ttf) format('truetype'),url(fonts/GothaProBol.820e5112.svg) format('svg');
+}
+
+html,
+body {
+  font-family: GothamPro;
+}
+
+body {
+  background-color: #ffda2d;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 55px;
+}
+
+@media (max-width:1848px) {
+  html {
+    font-size: 54px;
+  }
+}
+
+@media (max-width:1816px) {
+  html {
+    font-size: 53px;
+  }
+}
+
+@media (max-width:1784px) {
+  html {
+    font-size: 52px;
+  }
+}
+
+@media (max-width:1752px) {
+  html {
+    font-size: 51px;
+  }
+}
+
+@media (max-width:1720px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@media (max-width:1688px) {
+  html {
+    font-size: 49px;
+  }
+}
+
+@media (max-width:1656px) {
+  html {
+    font-size: 48px;
+  }
+}
+
+@media (max-width:1624px) {
+  html {
+    font-size: 47px;
+  }
+}
+
+@media (max-width:1592px) {
+  html {
+    font-size: 46px;
+  }
+}
+
+@media (max-width:1560px) {
+  html {
+    font-size: 45px;
+  }
+}
+
+@media (max-width:1528px) {
+  html {
+    font-size: 44px;
+  }
+}
+
+@media (max-width:1496px) {
+  html {
+    font-size: 43px;
+  }
+}
+
+@media (max-width:1464px) {
+  html {
+    font-size: 42px;
+  }
+}
+
+@media (max-width:1432px) {
+  html {
+    font-size: 41px;
+  }
+}
+
+@media (max-width:1400px) {
+  html {
+    font-size: 40px;
+  }
+}
+
+@media (max-width:1369px) {
+  html {
+    font-size: 39px;
+  }
+}
+
+@media (max-width:1338px) {
+  html {
+    font-size: 38px;
+  }
+}
+
+@media (max-width:1307px) {
+  html {
+    font-size: 37px;
+  }
+}
+
+@media (max-width:1276px) {
+  html {
+    font-size: 36px;
+  }
+}
+
+@media (max-width:1245px) {
+  html {
+    font-size: 35px;
+  }
+}
+
+@media (max-width:1213px) {
+  html {
+    font-size: 34px;
+  }
+}
+
+@media (max-width:1181px) {
+  html {
+    font-size: 33px;
+  }
+}
+
+@media (max-width:1149px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+@media (max-width:1117px) {
+  html {
+    font-size: 31px;
+  }
+}
+
+@media (max-width:1085px) {
+  html {
+    font-size: 30px;
+  }
+}
+
+@media (max-width:1053px) {
+  html {
+    font-size: 29px;
+  }
+}
+
+@media (max-width:1030px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+@media (max-width:998px) {
+  html {
+    font-size: 27px;
+  }
+}
+
+@media (max-width:966px) {
+  html {
+    font-size: 26px;
+  }
+}
+
+@media (max-width:934px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+@media (max-width:902px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (max-width:870px) {
+  html {
+    font-size: 23px;
+  }
+}
+
+@media (max-width:838px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media (max-width:806px) {
+  html {
+    font-size: 21px;
+  }
+}
+
+@media (max-width:774px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width:742px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (max-width:710px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (max-width:678px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (max-width:646px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:614px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width:582px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:550px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width:518px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width:486px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (max-width:454px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width:422px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width:390px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+.page-site {
+  position: relative;
+  max-width: 1920px;
+  min-width: 320px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.button {
+  width: 5.4rem;
+  height: 1.45rem;
+  background-color: rgba(143,12,0,.1);
+  text-align: center;
+  font-size: .56rem;
+  color: white;
+  letter-spacing: .02rem;
+  line-height: 1.5rem;
+  cursor: pointer;
+  border: 2px solid white;
+  text-transform: uppercase;
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  transition: background-color 1s;
+}
+
+.button:hover {
+  background-color: rgba(0,0,0,.2);
+}
+
+@media (max-width:680px) {
+ .button {
+    width: 13.2rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+    letter-spacing: .15rem;
+    line-height: 3.9rem;
+    border: 2px solid white;
+  }
+}
+
+/*основная часть*/
+
+.hidden-block {
+  opacity: 0;
+}
+
+.page-main {
+  position: absolute;
+  left: 150px;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.description-block, .image-block {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+}
+
+@keyframes right_scroll_animate {
+  from {transform: translateX(-2rem); opacity: 0;}
+  to {transform: translateX(0); opacity: 1;}
+}
+
+@keyframes left_scroll_animate {
+  from {transform: translateX(2rem); opacity: 0;}
+  to {transform: translateX(0); opacity: 1;}
+}
+
+@keyframes right_animate {
+  from {transform: translateX(-200px); opacity: 0;}
+  to {transform: translateX(0); opacity: 1;}
+}
+
+@keyframes left_animate {
+  from {transform: translateX(200px); opacity: 0;}
+  to {transform: translateX(0); opacity: 1;}
+}
+
+@media screen and (min-width: 680px) and (max-width: 1400px) {
+  .navigation {
+    width: 110px;
+  }
+  .page-main {
+    left: 110px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .page-main {
+    top: 80px;
+    width: 100%;
+    left: 0;
+  }
+
+  .animate-block{
+    -webkit-transition:none;
+    -moz-transition: none;
+    transition: none;
+    z-index: -1;
+  }
+
+  .description-block, .image-block {
+    width: 100%;
+    height: 50%;
+  }
+  
+  .page-content-block {
+    flex-direction: column;
+  }
+
+  .hidden-block {
+    opacity: 1;
+  }
+}
+
