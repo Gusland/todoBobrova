@@ -3,15 +3,6 @@
   background-size: cover;
 }
 
-.page-content-block {
-  width: 100%;
-  display: flex;
-}
-
-.page-content {
-  width: 50%;
-}
-
 .gallery-block__text-block {
   position: relative;
   margin: 6.1rem 0 0 2rem;

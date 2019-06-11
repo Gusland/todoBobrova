@@ -393,8 +393,6 @@ html {
   }
 }
 
-/*основная часть*/
-
 .hidden-block {
   opacity: 0;
 }
@@ -411,6 +409,11 @@ html {
   width: 50%;
   height: 100%;
   background-size: cover;
+}
+
+.page-content-block {
+  width: 100%;
+  display: flex;
 }
 
 @keyframes right_scroll_animate {

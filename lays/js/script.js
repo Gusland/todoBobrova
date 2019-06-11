@@ -1,7 +1,7 @@
-  const elementsHumburger = document.getElementsByClassName('menu__mobile-menu');
-  const elemNav = document.getElementsByClassName('navigation');
+  const elementsHumburger = document.getElementsByClassName('js-mobile-menu');
+  const elemNav = document.getElementsByClassName('js-nav');
   let isMenuOpen = false;
-  const linkElement = document.getElementsByClassName('menu__link');
+  const linkElement = document.getElementsByClassName('js-menu-link');
   
   window.addEventListener('resize', createProportionalBlock);
   window.addEventListener('load', createProportionalBlock);
@@ -29,8 +29,8 @@ function navigation() {
   }
 
 function createProportionalBlock(){
-    const head = document.getElementsByClassName("site-header");
-    const gallery = document.getElementsByClassName("gallery-block");
+    const head = document.getElementsByClassName("js-header");
+    const gallery = document.getElementsByClassName("js-gallery");
     let headwidth = head[0].offsetWidth;
     
     if (window.innerWidth <= 680) {
@@ -50,7 +50,7 @@ function createProportionalBlock(){
         }
     }
 
-    const element = document.getElementsByClassName("page-content-block");
+    const element = document.getElementsByClassName("js-content-block");
     for (let i = 0; i < element.length; i++) {
         let elwidth = element[i].offsetWidth;
         if (window.innerWidth <= 680) {
@@ -86,8 +86,8 @@ window.addEventListener("scroll", scrollDesc, false);
 
 function scrollDesc() {
   if (window.innerWidth > 680) {
-    const elementDesc = document.getElementsByClassName("description-block");
-    const elementImage = document.getElementsByClassName("image-block");
+    const elementDesc = document.getElementsByClassName("js-description");
+    const elementImage = document.getElementsByClassName("js-image");
     for (let i = 0; i < elementDesc.length; i++) {
         if (isVisible(elementDesc[i])) {
             elementDesc[i].classList.add("active");
