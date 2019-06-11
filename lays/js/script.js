@@ -37,7 +37,7 @@ function createProportionalBlock(){
         head[0].style.height = parseInt(1.73 *headwidth) + "px";
         head[0].classList.remove("site-header_animate");
         gallery[0].classList.remove("gallery-block_animate");
-        (document.getElementsByClassName('menu__link'))[3].addEventListener('click', navigation);
+        (document.getElementsByClassName('js-link-close'))[0].addEventListener('click', navigation);
         for (let i = 0; i < elementsHumburger.length; i++) {
             elementsHumburger[i].addEventListener('click', navigation);
         }

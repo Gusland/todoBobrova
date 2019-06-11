@@ -452,7 +452,6 @@ html {
   font-size: 14px;
   color: #555;
   margin-top: -10px;
-  /*color: rgba(0,0,0,.7);*/
 }
 
 .menu__link-icon {
@@ -628,7 +627,6 @@ html {
 
   .menu__link-icon{
     background-position: center;
-    display: inline-block;
     float: left;
     background-size: 41px 39px;
     width: 51px;
