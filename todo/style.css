@@ -1,4 +1,4 @@
-body, div, p {
+body {
   margin: 0;
   padding: 0;
   font: 8px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -13,10 +13,8 @@ body, div, p {
 .headline {
   font-size: 100px;
   color: #ead7d7;
-}
-
-.headline-wrapper {
-  margin: 20px 0;
+  font-weight: 300;
+  margin: 20px;
 }
 
 .main {
@@ -48,10 +46,12 @@ body, div, p {
   left: 76.92px;
   padding: 20px 10px 20px 40px;
   border-color: transparent;
+  height: inherit;
   resize: none;
   font-size: 24px;
   color: #444444;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .main__input-area:focus {
@@ -65,7 +65,6 @@ body, div, p {
 .main__task-list {
   list-style: none;
   border: 1px solid #dbdbdb;
-  width: 681.92px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -73,16 +72,16 @@ body, div, p {
 
 .task-list_text {
   width: 550px;
+  min-height: 30px;
   word-wrap: break-word;
   line-height: 30px;
   text-align: left;
-  margin: 10px 10px 10px 20px;
+  padding: 15px 10px 15px 15px;
 }
 
 .list-item {
   position: relative;
   display: flex;
-  justify-content: around-between;
   align-items: center;
   width: 681.92px;
   min-height: 60px;
@@ -94,6 +93,22 @@ body, div, p {
 
 .list-item:hover .btnDel {
 	opacity: .4;
+}
+
+.text-editing {
+  box-shadow: inset 1px -1px 3px 0 #dbdbdb;
+  border: 1px solid #4d4d4d;
+  min-height: 60px;
+  font-size: 20px;
+  margin-left: 54px;
+  width: inherit;
+  box-sizing: border-box;
+  padding-left: 20px;
+  color: #4d4d4d;
+}
+
+.text-editing:focus {
+  outline: none;
 }
 
 .list-footer {
@@ -180,11 +195,12 @@ input[type="checkbox"]:checked ~ span {
 
 .btnDel {
   position: absolute;
-  right: 32px;
-  bottom: 15px;
-  width: 27px;
-  height: 27px;
+  right: 10px;
+  bottom: 7px;
+  width: 26px;
+  height: 26px;
   opacity: 0;
+  padding: 10px;
 }
 
 .btnDel:hover {
@@ -193,10 +209,10 @@ input[type="checkbox"]:checked ~ span {
 
 .btnDel:before, .btnDel:after {
   position: absolute;
-  bottom: 5px;
-  left: 15px;
+  bottom: 10px;
+  right: 20px;
   content: ' ';
-  height: 20px;
+  height: 26px;
   width: 3px;
   background-color: #e27171;
 }

@@ -6,10 +6,11 @@ const footer = document.getElementsByClassName('js-list-footer');
 let isActive = 0;
 let isStorage = false;
 let todoList = [];
+let isEdit = false;
 
 function first_setting() {
-  document.getElementsByClassName('js-main__header')[0].addEventListener('click', stopClick);
-  window.addEventListener('click', create_item);
+  document.getElementsByClassName('js-main__header')[0].addEventListener('mousedown', stopClick);
+  window.addEventListener('mousedown', actionForClick);
   window.addEventListener("keydown", actionForEnter);
   for (let i = 0; i < bookMar.length; i++) {
     bookMar[i].addEventListener("click", changeTab);
@@ -36,6 +37,7 @@ function create_item() {
     activationOfAdditionalFunctions();
     document.getElementsByClassName('btnDel')[0].addEventListener('click', delItem);
     document.getElementsByClassName('list-checkbox')[0].addEventListener('click', control_check);
+    document.getElementsByClassName('task-list_text')[0].addEventListener('dblclick', textEditingFunction);
     ShowCounterActiveTask();
     saveToObject(idCounter,text,false);
     saveToStorage(todoList);
@@ -72,6 +74,7 @@ function createItemFromStorage(arrayValue) {
     activationOfAdditionalFunctions();
     document.getElementsByClassName('btnDel')[0].addEventListener('click', delItem);
     document.getElementsByClassName('list-checkbox')[0].addEventListener('click', control_check);
+    document.getElementsByClassName('task-list_text')[0].addEventListener('dblclick', textEditingFunction);
     if (arrayValue[i].completed) document.getElementsByClassName('list-checkbox')[0].click();
   }
   
@@ -121,8 +124,23 @@ function showAll() {
 }
 
 function actionForEnter(e) {
-  if (e.keyCode === 13) {
+  if (isEdit) {
+    if (e.keyCode === 13) {
     e.preventDefault();
+    addTextAfterEditing();
+  }
+  }
+  else if (e.keyCode === 13) {
+    e.preventDefault();
+    create_item();
+  }
+}
+
+function actionForClick() {
+  if (isEdit) {
+    addTextAfterEditing();
+  }
+  else {
     create_item();
   }
 }
@@ -138,6 +156,7 @@ function delItem() {
   if (listTask.children.length === 1) {
     footer[0].classList.remove('active');
     localStorage.removeItem("todoApp");
+    document.getElementsByClassName('checked-items')[0].style.display = "none";          //зачем???????
   }
   ShowCounterActiveTask();
 }
@@ -236,6 +255,55 @@ function selectAll() {
     for (let i = 0; i < elList.length; i++) {
       elList[i].click();
     }
+  } 
+}
+
+function textEditingFunction () {
+  isEdit = true;
+  let liElement = this.parentNode;
+  liElement.classList.add('edit');
+  for (let i = 0; i < liElement.children.length; i++) {
+    liElement.children[i].style.display = 'none';
   }
-  
+  let input = document.createElement('input');
+  input.type = "text";
+  input.autofocus = true;
+  input.className = "text-editing";
+  input.value = liElement.getElementsByClassName('task-list_text')[0].innerHTML;
+  liElement.appendChild(input);
+  input.addEventListener('mousedown', stopClick);
+}
+
+function addTextAfterEditing() {
+  isEdit = false;
+  let input = document.getElementsByClassName('text-editing')[0];
+  input.autofocus = false;
+  let liEdit = document.getElementsByClassName('edit')[0];
+  let text = input.value;
+  if(!validateText(text)) {
+    let g = delItem.bind(input);
+    // input.delItem();
+    g();
+  }
+  else {
+    liEdit.removeChild(input);
+    for (let i = 0; i < liEdit.children.length; i++) {
+      liEdit.children[i].style.display = 'block';
+    }
+    liEdit.getElementsByClassName('task-list_text')[0].innerHTML = text;
+    liEdit.classList.remove('edit');
+    liEdit.removeEventListener('mousedown', stopClick);
+    let idStorageItem = liEdit.getAttribute('data-id');
+    for (let i = 0; i < todoList.length; i++) {
+        if (todoList[i].id == idStorageItem) {
+          todoList[i].title = text;
+        }
+      }
+      saveToStorage(todoList);
+    }
+}
+
+function validateText(text) {
+  if (text[0] !== ' ' && text !== '') return true;
+  return false;
 }
