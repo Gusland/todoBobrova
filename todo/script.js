@@ -30,7 +30,7 @@ function create_item() {
     let li = document.createElement('li');
     li.setAttribute('data-id', idCounter);
     li.className = "list-item";
-    li.innerHTML =  '<input type="checkbox" id="' + clForCheck + '" class="list-checkbox"> <label for="' + clForCheck + '"></label>' + '<span class="task-list_text">' + text + '</span> <div class="btnDel"></div>';
+    li.innerHTML =  '<input type="checkbox" id="' + clForCheck + '" class="list-checkbox"> <label for="' + clForCheck + '"></label>' + '<span class="task-list_text">' + text.trim() + '</span> <div class="btnDel"></div>';
     listTask.insertBefore(li, listTask.firstChild);
     document.getElementsByClassName('js-input-text')[0].value = '';
     
@@ -39,7 +39,7 @@ function create_item() {
     document.getElementsByClassName('list-checkbox')[0].addEventListener('click', control_check);
     document.getElementsByClassName('task-list_text')[0].addEventListener('dblclick', textEditingFunction);
     ShowCounterActiveTask();
-    saveToObject(idCounter,text,false);
+    saveToObject(idCounter,text.trim(),false);
     saveToStorage(todoList);
     tabContent();
     document.getElementsByClassName('checked-items')[0].classList.remove('active');
