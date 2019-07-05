@@ -298,9 +298,6 @@ function addTextAfterEditing() {
   let liEdit = document.getElementsByClassName('edit')[0];
   let text = input.value;
   if(!validateText(text)) {
-    // let g = delItem.bind(input);
-    // input.delItem();
-    // g();
     delItem.bind(input)();
     return;
   }
