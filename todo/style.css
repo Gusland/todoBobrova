@@ -7,6 +7,8 @@ body {
 }
 
 .todo-Page {
+  width: 681.92px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -19,8 +21,6 @@ body {
 
 .main {
   box-shadow: 2px 3px 8px -2px gray;
-  width: 681.92px;
-  margin: 0 auto;
 }
 
 .main__header {
@@ -117,22 +117,6 @@ body {
 
 .text-editing:focus {
   outline: none;
-}
-
-.list-footer {
-  display: none;
-  position: relative;
-  width: 681.92px;
-  height: 45px;
-  border-top: 1px solid #dbdbdb;
-  margin: 0;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.list-footer.active {
-	display: block;
 }
 
 .list-checkbox {
@@ -237,6 +221,22 @@ input[type="checkbox"]:checked ~ span {
   transform: rotate(-45deg);
 }
 
+.list-footer {
+  display: none;
+  position: relative;
+  width: 681.92px;
+  height: 45px;
+  border-top: 1px solid #dbdbdb;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.list-footer.active {
+  display: block;
+}
+
 .footer-item {
 	color: #7f7e7e;
 	margin: 10px;
@@ -244,8 +244,9 @@ input[type="checkbox"]:checked ~ span {
 }
 
 .item-select {
-	margin-left: 20px;
-	margin-right: 150px;
+  width: 100px;
+	margin-left: 10px;
+	margin-right: 110px;
 }
 
 .bookmarks {
@@ -257,12 +258,12 @@ input[type="checkbox"]:checked ~ span {
   cursor: pointer;
 }
 
-.activeBord {
+.bookmarks:hover {
   border: 1px solid #ead7d7;
 }
 
-.bookmarks:hover {
-	border: 1px solid #ead7d7;
+.activeBord {
+  border: 1px solid #ead7d7;
 }
 
 .delete-completed {
