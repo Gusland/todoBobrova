@@ -130,20 +130,23 @@ body {
 
 .list-checkbox + label {
   position: relative;
-  left: 0;
+  left: 15px;
   top: 0;
-  padding: 0 0 0 60px;
-  float: left;
+  padding: 0 20px 0 0;
+  width: 35px;
+  height: 35px;
+  /*float: left;*/
 }
 
 .list-checkbox + label:before {
   content: '';
   position: absolute;
-  top: -18px;
-  left: 10px;
+  top: 0;
+  left: 0;
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  box-sizing: border-box;
   border: 1px solid #dbdbdb;
 }
 
@@ -154,8 +157,10 @@ body {
 .list-checkbox + label:after {
   content: '';
   position: absolute;
-  top: -18px;
-  left: 19px;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
 }
 
 .list-checkbox:checked + label:before {
