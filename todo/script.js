@@ -23,7 +23,7 @@ function first_setting() {
 
 function create_item() {
   let text = document.getElementsByClassName('js-input-text')[0].value;
-  if (text[0] !== ' ' && text !== '') {
+  if (!validateText(text)) return;
   	counterTasks += 1;
     idCounter = counterTasks;
   	let clForCheck = 'cb' + counterTasks;
@@ -43,7 +43,6 @@ function create_item() {
     saveToStorage(todoList);
     tabContent();
     document.getElementsByClassName('checked-items')[0].classList.remove('active');
-  }
 }
 
 function saveToObject(ID, text, check) {
@@ -303,13 +302,14 @@ function addTextAfterEditing() {
     // input.delItem();
     // g();
     delItem.bind(input)();
+    return;
   }
   else {
     liEdit.removeChild(input);
     for (let i = 0; i < liEdit.children.length; i++) {
       liEdit.children[i].style.display = 'block';
     }
-    liEdit.getElementsByClassName('task-list_text')[0].innerHTML = text;
+    liEdit.getElementsByClassName('task-list_text')[0].innerHTML = text.trim();
     liEdit.classList.remove('edit');
     liEdit.removeEventListener('mousedown', stopClick);
     let idStorageItem = liEdit.getAttribute('data-id');
@@ -323,6 +323,6 @@ function addTextAfterEditing() {
 }
 
 function validateText(text) {
-  if (text[0] !== ' ' && text !== '') return true;
+  if (text !== '' && /\S/.test(text)) return true;
   return false;
 }
