@@ -163,6 +163,10 @@ body {
   border: 1px solid #dbdbdb;
 }
 
+.list-checkbox + label:hover:before { 
+  border-color: #5dc2af;
+}
+
 .list-checkbox + label:after {
   content: '';
   position: absolute;
@@ -204,14 +208,14 @@ input[type="checkbox"]:checked ~ span {
 .btnDel {
   position: absolute;
   right: 10px;
-  bottom: 7px;
-  width: 26px;
-  height: 26px;
+  bottom: 10px;
+  width: 20px;
+  height: 20px;
   opacity: 0;
   padding: 10px;
 }
 
-.btnDel:hover {
+.list-item .btnDel:hover {
 	opacity: 1;
 }
 
@@ -220,7 +224,7 @@ input[type="checkbox"]:checked ~ span {
   bottom: 10px;
   right: 20px;
   content: ' ';
-  height: 26px;
+  height: 20px;
   width: 3px;
   background-color: #e27171;
 }

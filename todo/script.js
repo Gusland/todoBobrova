@@ -42,6 +42,7 @@ function create_item() {
     saveToObject(idCounter,text,false);
     saveToStorage(todoList);
     tabContent();
+    document.getElementsByClassName('checked-items')[0].classList.remove('active');
   }
 }
 
@@ -162,7 +163,7 @@ function delItem() {
     footer[0].classList.remove('active');
     localStorage.removeItem("todoApp");
     document.getElementsByClassName('checked-items')[0].style.display = "none";   
-    document.getElementsByClassName('checked-items')[0].classList.remove('active');       
+    document.getElementsByClassName('checked-items')[0].classList.remove('active');      
   }
   ShowCounterActiveTask();
 }
